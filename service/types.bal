@@ -27,7 +27,7 @@ public type User record {
     string mobileNumber;
 };
 
-type ReservationRequest record {
+type NewReservationRequest record {
     string checkinDate;
     string checkoutDate;
     int rate;
@@ -35,8 +35,18 @@ type ReservationRequest record {
     string roomType;
 };
 
-type NewRecord record {
+type UpdateReservationRequest record {
     string checkinDate;
     string checkoutDate;
 };
+
+type NewReservationError record {|
+    *http:NotFound;
+    string body;
+|};
+
+type UpdateReservationError record {|
+    *http:NotFound;
+    string body;
+|};
 
