@@ -1,3 +1,5 @@
+import ballerina/http;
+
 public type Reservation record {|
     readonly int id;
     Room room;
@@ -24,3 +26,17 @@ public type User record {
     string email;
     string mobileNumber;
 };
+
+type ReservationRequest record {
+    string checkinDate;
+    string checkoutDate;
+    int rate;
+    User user;
+    string roomType;
+};
+
+type NewRecord record {
+    string checkinDate;
+    string checkoutDate;
+};
+
